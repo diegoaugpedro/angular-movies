@@ -1,0 +1,44 @@
+<form>
+  <div>
+    <div>
+      <div>
+        <div>
+          <span>BUSCAR</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Digite o nome do filme"
+          [(ngModel)]="filter"
+          name="filter"
+          (ngModelChange)="onInputChange($event)"
+        />
+      </div>
+    </div>
+    <div>
+      <label for="order">ORDENAR</label>
+      <select 
+      [(ngModel)]="order"
+      name="order"
+      (ngModelChange)="onSelectChange($event)"
+      class="form-control">
+        <option value="TitleA">Order by Title Asc</option>
+        <option value="TitleD">Order by Title Desc</option>
+        <option value="VoteD">Order by Vote Desc</option>
+        <option value="VoteA">Order by Vote Asc</option>
+      </select>
+    </div>
+  </div>
+</form>
+<div>
+  <div>
+    <div *ngFor="let movie of movies">
+      <app-movie-item
+        [id]="movie.id"
+        [titulo]="movie.title"
+        [descricao]="movie.overview"
+        [image]="movie.poster_path"
+      ></app-movie-item>
+    </div>
+  </div>
+</div>

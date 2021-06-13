@@ -1,0 +1,17 @@
+<div>
+    <div style="padding: 10px;">
+        <div style="padding: 10px;">
+            <div>
+                <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{movie.poster_path}}" alt="{{ movie.title }}" />
+            </div>
+        </div>
+
+        <div style="padding: 10px;">
+            <h1>{{ movie.title }}</h1>
+            <p>{{ movie.overview }}</p>
+            <hr />
+            <p>Average: {{ movie.vote_average }}</p>
+        </div>
+        <p><a routerLink="/">VOLTAR</a></p>
+    </div>
+</div>
